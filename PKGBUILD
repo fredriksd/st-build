@@ -6,24 +6,23 @@
 # Maintainer: Fredrik Sandhei <fredrik.sandhei@gmail.com>
 pkgname=st-fredrik
 _pkgname=st
-pkgver=0.1
+pkgver=0.8.4
 pkgrel=1
-pkgdesc="My simple terminal setup."
+pkgdesc="My setup of suckless terminal setup."
 arch=('x86_64')
+url="git://git.suckless.org/st"
 license=('MIT')
-
 depends=()
-makedepends=()
+makedepends=(git make)
 backup=()
 options=('zipman')
 
-source=("$pkgname-$pkgver.tar.gz"
+source=("git + ${url}"
         "$pkgname-$pkgver.patch")
 noextract=()
 md5sums=()
 
 provides=("${_pkgname}")
-conflicts=("${_pkgname}")
 
 prepare() {
 	#cd "$pkgname-$pkgver"
